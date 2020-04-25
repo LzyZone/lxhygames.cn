@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>鱼丸游戏-休闲娱乐游戏研发及运营平台_手机游戏</title>
+<meta name="Keywords" content="####">
+<meta name="Description" content="####">
+<script type="text/javascript" src="static/js/jquery-1.7.2.min.js"></script>
+<link rel="stylesheet" href="static/css/base.css" type="text/css">
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/base.js"></script>
+</head>
+
+<body>
+<script>
+ window.onload=function(){
+  var oDiv=document.getElementById("aboutNav");
+  var oDiv2=document.getElementById("aboutTop");
+  var aBtn=oDiv.getElementsByTagName("div");
+  var aDiv1=oDiv2.getElementsByTagName("li");
+  
+ 	for(var i=0;i<aBtn.length;i++){
+ 	aBtn[i].index=i;
+ 	
+ 	aBtn[i].onmouseover=function(){
+ 	this.className="on";
+ 	};
+ 	aBtn[i].onmouseout=function(){
+ 	this.className="";
+ 	
+ 	if(aDiv1[this.index].style.display=="block"){
+ 	 this.className="on";
+ 	 }
+ 	};
+ 	aBtn[i].onclick=function (){
+ 	
+ 	for(var j=0; j<aBtn.length;j++){
+ 		aBtn[j].className="";
+ 		aDiv1[j].style.display="none";
+ 	}
+ 	this.className="on";
+ 	aDiv1[this.index].style.display="block";
+ 	};
+ 	}
+  };
+</script>
+	<div class="header">
+		<div class="wrap">
+			<p style="color:red;font-size:18px;position:relative;top:30%;left:15%">&nbsp;&nbsp;适龄提示：18岁以上玩家</p>
+			<div class="logo">
+<a style="font-size:20px;position:relative;top:30%;left:60%">&nbsp;&nbsp;深圳市灵犀互娱科技有限公司</a>
+			</div>
+			
+		  
+			<div class="login" style="background:#2ca8e8;display: none;">
+				<span class=""><a href="/user.html" style="color:#f8f8f8">登录</a> </span> <span class=""><a href="/register.html" style="color:#f8f8f8">注册</a> </span>
+			</div>
+
+            <div class="lyle"><p> </p></div>
+			<div class="nav">
+				<ul>
+					<li><a href="/index.html" class="home"><span></span><em>首页</em>
+					</a>
+					</li>
+					<li><a href="/about.html" class="news"><span></span><em>关于我们</em>
+					</a>
+					</li>
+					<li><a href="/service.html" class="service"><span></span><em>客服</em>
+					</a>
+					</li>
+					<li><a href="/article.html" class="news"><span></span><em>用户协议</em>
+					</a>
+					</li>
+					<li><a href="/newcustody.html" class="news"><span></span><em>家长监护工程</em>
+					</a></li>
+					<li class="on"><a href="/pay.html" class="news"><span></span><em>充值中心</em>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			ltModule['index'].main();
+		});
+	</script>
+
+
+	<div class="ltPath">
+    	<div class="wrap">
+        	<span>现在的位置：</span>
+            <a href="/pay.html">充值中心</a>
+        </div>
+    </div>
+    <div class="ltModule">
+    	<div class="aboutLt">
+<div class="aboutLeft">
+	<div class="aboutNav" id="aboutNav">
+		<ul class="outer" style="cursor:pointer;">
+			
+			<li>
+				<div class="on">充值流程图</div>
+			</li><li>
+			
+		</li></ul>
+		
+	</div>
+</div>
+            <div class="aboutRight">
+            	
+               <div class="aboutTop" id="aboutTop">
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <font style="color:#a0a0a0;font-size:16px">充值的游戏: </font><font style="color:black;font-size:16px">《千炮捕鱼》</font><br>
+               <br>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
+               <font style="color:#a0a0a0;font-size:16px">
+               		<input type="radio" name="1" id="radio1" style="cursor: pointer;data-button-color:blue" checked="checked">给自己充值
+               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               		<input type="radio" name="1" id="radio2">给好友充值
+               </font>
+               <br><br>
+              	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<font style="color:#a0a0a0;font-size:16px">需要充值的金额:
+               	<br>
+               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="2" checked="checked">10元 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="2">20元 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="2">30元 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="2">50元 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="2">100元 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	</font>
+               	<br><br>
+              	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<font style="color:#a0a0a0;font-size:16px">自定义金额:&nbsp;&nbsp;&nbsp;
+               	<input id="money" type="text" placeholder="自定义金额" style="height:25px;width:100px;background-color:rgba(191, 175, 175, 0.44);">
+               	元人民币(*单笔充值金额最少10元)<br>
+               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	&nbsp;
+                	获得游戏币:100000金币
+               	</font>
+               	<br><br><br><br>
+              	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<font style="color:#a0a0a0;font-size:16px">选择银行:&nbsp;&nbsp;&nbsp;
+               	<br>
+               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="3" checked="checked">工商银行&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="3">农业银行&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="3">招商银行&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="3">建设银行&nbsp;&nbsp;&nbsp;
+               	<input type="radio" name="3">交通银行&nbsp;&nbsp;&nbsp;
+               	</font>
+               <br><br><br>
+              	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	
+               	<font style="color:#a0a0a0;font-size:16px">
+	               	<input type="checkbox" id="checkedId">
+	               	我已经阅读并同意:&nbsp;&nbsp;
+               	</font>
+               	<font style="color:#6b1faf;font-size:16px">
+               		<a href="/article.html">《用户协议》</a>
+               	</font>
+               	<br><br>
+               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <font style="color:#6b1faf;font-size:16px" ;width:200px="">
+               	</font>
+					<div class="ltMFormA" style="width:100000px">
+                	<div class="ltForm">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div><button type="button" class="ltBtnA1" id="login" style="background-color:#afafaf;cursor:not-allowed">提交充值</button></div>
+						<input type="hidden" value="/user" name="to" id="to">
+	
+                    </div>
+                     
+                </div>
+                    
+               </div>
+              
+                
+            </div>
+        	
+        	
+        </div>
+    </div>
+
+
+	<div class="footer">
+		<div class="wrap">
+			<div class="about">
+				<p class="p1">
+					
+				</p>
+			<p>抵制不良游戏，拒绝盗版游戏。 注意自我保护，谨防受骗上当。</p>
+                            <p>适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+                                            <p>客服QQ:463301984</p>
+                                                            <p>联系地址:深圳市宝安区福永街道兴围社区兴华路北102号创造力科技大厦A栋513</p>
+                                                                            <p>深圳市灵犀互娱科技有限公司   版权所有  <a href="http://www.miitbeian.gov.cn/" target="_blank" style="color:#b1b1b1;"></a></p>
+                                                                                            <p><a href="#经营许可证" target="_blank" style="color:#b1b1b1;">增值电信业务经营许可证： </a></p>
+                                                                                                            <p><img src="static/images/beian.png" width="20">&nbsp;沪公网安备 <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="color:#b1b1b1;" target="_blank"></a>号</p>
+                                                                                                                            <p><img src="static/images/www.png" width="20">&nbsp;互联网文化经营单位：沪网文：<a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/486D292193493B18E0530140A8C04AC3" style="color:#b1b1b1;" target="_blank"></a></p>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+
+
+
+<script type="text/javascript">
+	$(function(){
+		$("#checkedId").click(function(){
+			var checkedId=$("#checkedId").attr("checked");
+			$("#login").css("background-color","#afafaf");
+			$("#login").css("cursor","not-allowed");
+			
+			if(checkedId){
+				$("#login").css("background-color","#2CA8E8");
+				$("#login").css("cursor","auto");
+			}
+		});
+		
+		$("#money").blur(function(){
+			var money=$("#money").val();
+			if(money<10){
+				alert("自定义金额不可小于10元人民币!");
+			}
+		});
+		
+		$("#login").click(function(){
+			alert("该项目暂未开放, 尽情期待!");
+		});
+		
+		
+	}); 
+</script>
+					
+<audio controls="controls" style="display: none;"></audio></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></html>

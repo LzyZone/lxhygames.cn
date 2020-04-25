@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>鱼丸游戏-休闲娱乐游戏研发及运营平台_手机游戏</title>
+<meta name="Keywords" content="##">
+<meta name="Description" content="####">
+<link rel="stylesheet" href="static/css/base.css" type="text/css">
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/base.js"></script>
+<link rel="stylesheet" href="static/css/service.css" type="text/css">
+<script type="text/javascript" src="static/js/move1.js"></script>
+<style>
+body{	background: #F0F0F0;}
+#div1 {
+	width: 300px;
+	border-radius:30px;
+	filter: alpha(opacity=60);
+	opacity:0.6;
+	height: 450px;
+	background: black;
+	position: absolute;
+	padding-left:30px;
+	padding-right:25px;
+	bottom: 0px;
+	right: 0px;
+	z-index: 2;
+	font-size: 20px;
+	overflow: hidden;
+}
+.products{
+	width:100%;
+}
+.products ul{
+	list-style: none;
+	width:1200px;
+	margin:0 auto;
+	padding:0
+}
+.products ul li{;
+	float: left;
+	padding: 22.5px 0;
+}
+.products .pic{
+	width:322px;
+	height:201px;
+	overflow: hidden;
+	float: left;
+}
+.products .download{
+	width:826px;
+	float: left;
+
+}
+.products .download{
+	color: #d0d1d2;
+	margin-left:45px;
+}
+.products .download .tiny0{
+	width:11px;
+	height:22px;
+	background-image: url("static/images/tiny0.gif");
+	float: left;
+	margin-top:88px;
+}
+
+.products .download .content{
+	background-color: #272a2c;
+	width:815px;
+	height:200px;
+	font-family: é»‘ä½“;
+	float: left;
+	font-size:14px;
+	letter-spacing: 2px;
+	text-indent: 2em;
+	box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3);
+}
+.products .download .content .tiny{
+	width:0px;
+	height:0px;
+	float: left;
+}
+.products .download .content .tiny1{
+	border-left:6px solid #c21d35;
+	border-top:6px solid #c21d35;
+	border-right:6px solid #272a2c;
+	border-bottom:6px solid #272a2c;
+}
+.products .download .content .tiny2{
+	border-right:6px solid #c21d35;
+	border-top:6px solid #c21d35;
+	border-left:6px solid #272a2c;
+	border-bottom:6px solid #272a2c;
+	float: right;
+}
+.products .download .content .tiny3{
+	border-left:6px solid #c21d35;
+	border-bottom:6px solid #c21d35;
+	border-right:6px solid #272a2c;
+	border-top:6px solid #272a2c;
+	position: relative;
+	bottom: -176px;
+
+ }
+.products .download .content .tiny4{
+	border-right:6px solid #c21d35;
+	border-bottom:6px solid #c21d35;
+	border-left:6px solid #272a2c;
+	border-top:6px solid #272a2c;
+	position: relative;
+	bottom: -176px;
+	left: 791px;
+}
+.products .download .text{
+	line-height: 150%;
+	margin-left:10px;
+	margin-right:10px;
+	height:120px;
+	overflow-y:hidden;
+}
+.products .download .btn{
+	width: 148px;
+	height: 47px;
+	float:left;
+}
+.products .download .btn_ios{
+	background: url("static/images/ios_btn.png") no-repeat;
+	left:228px;
+	bottom:-39px;
+}
+.products .download_btn{
+	float:left;
+	padding-left:17%;
+}
+.products .download .btn_ios:hover{
+	cursor: pointer;
+}
+.products .download .btn_android{
+	background: url("static/images/android_btn.png") no-repeat;
+	left:430px;
+	bottom:86px;
+	margin-left:196px;
+}
+.products .download .btn_android:hover{
+	cursor: pointer;
+}
+.products .download .btn_pc{
+	background: url("static/images/pc_btn.png") no-repeat;
+	left:430px;
+	bottom:86px;
+	margin-left:56px;
+}
+.products .download .btn_pc:hover{
+	cursor: pointer;
+}
+</style>
+    <script>
+	window.onscroll = function() {
+		var oDiv = document.getElementById("div1");
+		var scrollTop = document.documentElement.scrollTop
+				|| document.body.scrollTop;
+		/* oDiv.style.top=document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop+"px";
+		 */
+		startMove1(parseInt(document.documentElement.clientHeight
+				- oDiv.offsetHeight + scrollTop));
+	};
+	var timer = null;
+	function startMove1(iTarget) {
+		var oDiv = document.getElementById("div1");
+		clearInterval(timer);
+		timer = setInterval(function() {
+			var speed = (iTarget - oDiv.offsetTop) / 6;
+			speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+			if (oDiv.offsetTop == iTarget) {
+				clearInterval(timer);
+			} else {
+				oDiv.style.top = oDiv.offsetTop + speed + "px";
+			}
+		}, 30);
+
+	}
+</script>
+</head>
+<body>
+	<div class="header">
+		<div class="wrap">
+			<div></div>
+			<div class="lyle"><p></p></div>
+			<div class="nav" style="height:12px">
+            <div class="logo">
+            <a style="font-size:20px;position:relative;top:30%;left:60%">&nbsp;&nbsp;深圳市灵犀互娱科技有限公司</a>
+            </div>
+		<p style="color:red;font-size:18px;position:relative;top:20%;left:0%">&nbsp;&nbsp;适龄提示：18岁以上玩家</p>
+				<ul>
+					<li class="on"><a href="/" class="home"><span></span><em>首
+								页</em> </a></li>
+					<li><a href="/about.html" class="news"><span></span><em>关于我们</em>
+					</a></li>
+
+					<li><a href="/service.html" class="service"><span></span><em>客
+								服</em> </a></li>
+
+					<li><a href="/article.html" class="news"><span></span><em>用户协议</em>
+					</a></li>
+					<li><a href="/newcustody.html" class="news"><span></span><em>家长监护工程</em>
+					</a></li>
+					<li><a href="/pay.html" class="news"><span></span><em>充值中心</em>
+					</a></li>
+				</ul>
+				
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			ltModule['index'].main();
+		});
+	</script>
+	<div class="ltbanner">
+		<div class="wrap">
+			<div class="slider">
+				<div class="pics">
+					<img src="static/images/疯狂哇哇机1.jpg" style="display: block;margin:0 auto;">
+				</div>
+				<div class="dotNav"><span class="on"></span></div>
+			</div>
+		</div>
+	</div>
+	<script>
+	function apple(){
+	alert("亲！在苹果商店里搜鱼丸游戏下载就可以玩耍了！");
+	return false;
+	
+	}
+	</script>
+	
+	
+	<div class="dt_bg">
+        <div class="dt_body">
+            <div class="products">
+                <ul>
+ <li>
+                        <a name="d4"></a>
+                        <div class="pic"><a href="/"><img width="323" src="static/images/吾宠消消消.jpg"></a></div>
+                        <div class="download">
+                            <div class="tiny0"></div>
+                            <div class="content">
+                                <div class="tiny tiny1"></div>
+                                <div class="tiny tiny2"></div>
+                                <div class="clear"></div>
+                                <div class="tiny tiny3"></div>
+                                <div class="tiny tiny4"></div>
+                                <div class="text">简介：这是一款非常可爱的休闲益智游戏！★画面精美：清新可爱的游戏画面，有狮子、熊猫、兔子、猴子等各种Q萌可爱的小动物；★操作简单：规则超简单，
+找到并消除两个以上的相同的小动物，相连动物越多，得分越高。 ★老少皆宜：关卡设计从易到难，适合不同年龄的玩家，10岁以下的孩子和中老年人都喜欢；</div>
+                                <div class="download_btn">
+                                        <div class="btn btn_android" onclick="location.href=encodeURI(&#39;http://www.dafuhao-ol.com/GameBusiness/dfhapk/wcxxx_71C44_0111.apk&#39;);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a name="d5"></a>
+                        <div class="pic"><a href="/"><img width="323" src="static/images/疯狂娃娃机_2.jpg"></a></div>
+                        <div class="download">
+                            <div class="tiny0"></div>
+                            <div class="content">
+                                <div class="tiny tiny1"></div>
+                                <div class="tiny tiny2"></div>
+                                <div class="clear"></div>
+                                <div class="tiny tiny3"></div>
+                                <div class="tiny tiny4"></div>
+                                <div class="text">简介：抓娃娃机游戏，适合女生游戏，暖暖的画风，欢乐的音乐，萌萌的玩偶。无论在家中、聚会时、还是在路上，都能随时随地享受免费抓娃娃的乐趣。单&gt;机休闲游戏，超多关卡等你来,体验现场夹娃娃大作战的刺激感！</div>
+                                <div class="download_btn">
+                                        <div class="btn btn_android" onclick="location.href=encodeURI(&#39;http://www.dafuhao-ol.com/GameBusiness/dfhapk/fkwwj_71C43_0111.apk&#39;);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+	
+	<div class="footer">
+	
+		<div class="wrap">
+			<div class="about">
+			
+				<p class="p1">
+					
+				</p>
+                <p>抵制不良游戏，拒绝盗版游戏。 注意自我保护，谨防受骗上当。</p>
+                                <p>适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+                                                <p>客服QQ:463301984</p>
+                                                                <p>联系地址:深圳市宝安区福永街道兴围社区兴华路北102号创造力科技大厦A栋513</p>
+                                                                                <p>深圳市灵犀互娱科技有限公司   版权所有  <a href="http://www.beian.miit.gov.cn/" target="_blank" style="color:#b1b1b1;"></a></p>
+                                                                                                <p><a href="#经营许可证" target="_blank" style="color:#b1b1b1;">增值电信业务经营许可证： </a></p>
+                                                                                                                <p><img src="static/images/beian.png" width="20">&nbsp;沪公网安备 <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="color:#b1b1b1;" target="_blank"></a>号</p>
+                                                                                                                                <p><img src="static/images/www.png" width="20">&nbsp;互联网文化经营单位：沪网文：<a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/486D292193493B18E0530140A8C04AC3" style="color:#b1b1b1;" target="_blank"></a></p>
+                
+                
+
+			</div>
+			
+		</div>
+	</div>
+	<div class="goToTop" style="display: none;">
+		<a href="/"></a>
+	</div>
+<audio controls="controls" style="display: none;"></audio>
+</body>
+<style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></html>

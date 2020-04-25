@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>鱼丸游戏-休闲娱乐游戏研发及运营平台_手机游戏</title>
+<meta name="Keywords" content="####">
+<meta name="Description" content="####">
+<link rel="stylesheet" href="static/css/base.css" type="text/css">
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/base.js"></script>
+<script type="text/javascript" src="static/js/move1.js"></script>
+<style>
+#div1 {
+	width: 300px;
+	border-radius: 30px;
+	filter: alpha(opacity =   60);
+	padding-left: 30px;
+	opacity: 0.6;
+	height: 450px;
+	background: black;
+	border-radius: 30px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	z-index: 2px;
+	font-size: 20px;
+	overflow: hidden;
+}
+</style><script>
+	window.onscroll = function() {
+		var oDiv = document.getElementById("div1");
+		var scrollTop = document.documentElement.scrollTop
+				|| document.body.scrollTop;
+		startMove1(parseInt(document.documentElement.clientHeight
+				- oDiv.offsetHeight + scrollTop));
+	};
+	var timer = null;
+	function startMove1(iTarget) {
+		var oDiv = document.getElementById("div1");
+		clearInterval(timer);
+		timer = setInterval(function() {
+			var speed = (iTarget - oDiv.offsetTop) / 15;
+			speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+			if (oDiv.offsetTop == iTarget) {
+				clearInterval(timer);
+			} else {
+				oDiv.style.top = oDiv.offsetTop + speed + "px";
+			}
+		}, 30);
+
+	}
+</script></head>
+
+
+<body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			ltModule['index'].main();
+		});
+	</script>
+	<script>
+		window.onload = function() {
+
+			var oNav = document.getElementById("aboutNav");
+			var oDiv2 = document.getElementById("aboutTop");
+			var aBtn = oNav.getElementsByTagName("div");
+			var aDiv1 = oDiv2.getElementsByTagName("li");
+
+			for ( var i = 0; i < aBtn.length; i++) {
+				aBtn[i].index = i;
+
+				aBtn[i].onmouseover = function() {
+					this.className = "on";
+				};
+				aBtn[i].onmouseout = function() {
+					this.className = "";
+
+					if (aDiv1[this.index].style.display == "block") {
+						this.className = "on";
+					}
+				};
+				aBtn[i].onclick = function() {
+					for ( var j = 0; j < aBtn.length; j++) {
+						aBtn[j].className = "";
+						aDiv1[j].style.display = "none";
+					}
+					this.className = "on";
+					aDiv1[this.index].style.display = "block";
+				};
+
+			}
+		};
+	</script>
+	<div class="header">
+		<div class="wrap">
+			<p style="color:red;font-size:18px;position:relative;top:30%;left:15%">&nbsp;&nbsp;适龄提示：18岁以上玩家</p>
+			<div class="logo">
+			<a style="font-size:20px;position:relative;top:30%;left:60%">&nbsp;&nbsp;深圳市灵犀互娱科技有限公司</a>
+			</div>
+		
+		  
+			<div class="login" style="background:#2ca8e8;display: none;">
+				<span class=""><a href="/user.html" style="color:#f8f8f8">登录</a> </span> <span class=""><a href="/register.html" style="color:#f8f8f8">注册</a> </span>
+			</div>
+            <div class="lyle"><p></p></div>
+			<div class="nav">
+				<ul>
+					<li><a href="/index.html" class="home"><span></span><em>首
+								页</em> </a></li>
+					<li class="on"><a href="/about.html" class="news"><span></span><em>关于我们</em>
+					</a></li>
+
+					<li><a href="/service.html" class="service"><span></span><em>客
+								服</em> </a></li>
+					<li><a href="/article.html" class="news"><span></span><em>用户协议</em>
+					</a></li>
+					<li><a href="/newcustody.html" class="news"><span></span><em>家长监护工程</em>
+					</a></li>
+					<li><a href="/pay.html" class="news"><span></span><em>充值中心</em>
+					</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="ltPath">
+		<div class="wrap">
+			<span>现在的位置：</span> <a href="/about.html">关于我们</a>
+		</div>
+	</div>
+	<div class="ltModule">
+		<div class="aboutLt">
+			<div class="aboutLeft">
+				<div class="aboutNav" id="aboutNav">
+					<ul class="outer" style="cursor:pointer;">
+						<li>
+							<div class="on">关于我们</div></li>
+						
+					</ul>
+
+				</div>
+			</div>
+			<div class="aboutRight">
+				<div class="aboutTop" id="aboutTop">
+					<ul>
+						<li style="display:block;font-size:16px;height:510px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;深圳市灵犀互娱科技有限公司是一家专注于移动互联网领域内的创业型公司，主要研发，设计，制作，运营移动端的手机游戏。公司借助移动互联网蓬勃兴起的东风，公司的手游产品陆续上线，公司规模不断壮大，现诚聘有志于从事手机游戏的精英共同发展。我们心态稳定，清楚想做什么样的游戏，想做什么样的公司，想过什么样的生活。我们作风稳健，有自己的发展节奏规划，既怀有理想也清楚自己的能力上限，立项严格，倡导人员少而精，做原型百般耐心挑剔，铺工作量迅速执行到位。我们希望能做一个长期的产品为核心竞争力的手机游戏公司。
+							<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司注重团队氛围，珍惜人才积累，知识经验沉淀。我们正在努力实现的公司氛围是：稳定舒心的环境，勤奋向上，在做出超出用户预期的产品体验过程中，互相提携集体成长，努力构造一个学习型团队。目前公司老小伙伴们合作默契，亲密无间，互相关爱，加入我们，你将收获一生的事业伙伴和生活朋友。</li>
+						<li style="display:none;font-size:16px;height:510px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;深圳市灵犀互娱科技有限公司是一家专注于移动互联网领域内的创业型公司，主要研发，设计，制作，运营移动端的手机游戏。公司借助移动互联网蓬勃兴起的东风，公司的手游产品陆续上线，公司规模不断壮大，现诚聘有志于从事手机游戏的精英共同发展。我们心态稳定，清楚想做什么样的游戏，想做什么样的公司，想过什么样的生活。我们作风稳健，有自己的发展节奏规划，既怀有理想也清楚自己的能力上限，立项严格，倡导人员少而精，做原型百般耐心挑剔，铺工作量迅速执行到位。我们希望能做一个长期的产品为核心竞争力的手机游戏公司。
+							<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公司注重团队氛围，珍惜人才积累，知识经验沉淀。我们正在努力实现的公司氛围是：稳定舒心的环境，勤奋向上，在做出超出用户预期的产品体验过程中，互相提携集体成长，努力构造一个学习型团队。目前公司老小伙伴们合作默契，亲密无间，互相关爱，加入我们，你将收获一生的事业伙伴和生活朋友。</li>
+						<li style="display:none;font-size:16px;height:auto;"><p>
+
+						</p></li>
+						<li style="display:none;font-size:16px;height:510px;">
+
+						</li>
+						<li style="display:none;font-size:16px;height:auto;">
+
+						</li>
+					</ul>
+
+
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="wrap">
+			<div class="about">
+				<p class="p1">
+					
+				</p>
+				
+<p>抵制不良游戏，拒绝盗版游戏。 注意自我保护，谨防受骗上当。</p>
+                <p>适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+                                <p>客服QQ:463301984</p>
+                                                <p>联系地址:深圳市宝安区福永街道兴围社区兴华路北102号创造力科技大厦A栋513</p>
+                                                                <p>深圳市灵犀互娱科技有限公司   版权所有  <a href="http://www.miitbeian.gov.cn/" target="_blank" style="color:#b1b1b1;"></a></p>
+                                                                                <p><a href="#经营许可证" target="_blank" style="color:#b1b1b1;">增值电信业务经营许可证： </a></p>
+                                                                                                <p><img src="static/images/beian.png" width="20">&nbsp;沪公网安备 <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="color:#b1b1b1;" target="_blank"></a>号</p>
+                                                                                                                <p><img src="static/images/www.png" width="20">&nbsp;互联网文化经营单位：沪网文：<a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/486D292193493B18E0530140A8C04AC3" style="color:#b1b1b1;" target="_blank"></a></p>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+<audio controls="controls" style="display: none;"></audio></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></html>

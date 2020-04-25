@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+body,html{}
+body{ font-size:12px; color:#6a6a6a; font-family:\5B8B\4F53;}
+.pagewrap{ width:100%; background:#eef0ef;}
+.header{ width:100%; background:#bebebe url(../images/header_bg.jpg) center top no-repeat;}
+.bodyer{ width:100%;}
+.header .main{ margin:0 auto; width:948px; height:189px; background:url(../images/header_main.jpg) center top no-repeat;}
+.bodyer .titile{ background:url(../images/titile_x.jpg) repeat-x;}
+.bodyer .titile .main{ margin:0 auto; width:948px; height:55px;}
+.bodyer .contMain{ margin:0 auto; width:948px;}
+.bodyer .contMain02{ background:url(../images/contMain_y.gif) repeat-y;}
+
+.contMain .left{ float:left; width:625px;}
+.contMain .right{ float:right; width:321px; min-height:982px; height:auto; _height:982px; background:url(../images/right_y.gif);}
+.contMain .left .pHd{ height:56px; line-height:56px; padding:0 15px; text-indent:25px; overflow:hidden;}
+.contMain .left .coopera{ padding-bottom:10px;}
+.coopera p{ line-height:20px; padding:0 15px; text-indent:25px;}
+.coopera .lxUl{ padding-left:16px;}
+.coopera .lxUl li{ height:20px; line-height:20px;}
+.coopera .lxUl li span{ color:#3535ff; padding-right:10px;}
+.coopera .lxUl li a{ color:#6a6a6a;}
+
+.contMain .right .baner{ width:298px; margin:0 auto; padding-top:26px;}
+.baner a{ display:block; width:298px; height:100px; outline:none;}
+.contMain .right .titHd{ width:298px; height:27px; margin:0 auto; border-bottom:1px solid #45484b; padding-top:10px;}
+.contMain .right .ulList{ width:285px; margin:0 auto; padding-top:15px;}
+.ulList li{ float:left; width:290px; height:25px; line-height:25px; overflow:hidden; color:#424141;}
+.ulList li span a{ color:#424141;}
+.ulList li span{ float:left; width:251px; height:22px; overflow:hidden;}
+.ulList li samp{ float:right;}
+
+.contMain .left .tabs{ width:587px; margin:0 auto; padding-top:40px;}
+.tabs ul { float:left; width:587px; border-bottom:1px solid #44484b;}
+.tabs ul li{ float:left; display:inline-block; width:100px; height:30px; border:1px solid #44484b; border-bottom:none; background:#44484b; _overflow:hidden;}
+.tabs ul li a{display:block; width:100px; height:31x; line-height:31px; font-weight:bold; color:#fff; text-align:center; outline:none;}
+.tabs ul li a:hover{ text-decoration:none;}
+.tabs ul li.active a{ color:#464a4c; height:30px; border-bottom:1px solid #eef0ef; background:#eef0ef;}
+.tabs .tabCont{ float:left;width:587px;}
+.tabCont p{ text-indent:12px; line-height:22px;}
+.tabCont p span,.tabCont p strong{ margin-left:-12px;}
+.tabCont .ckb{ width:217px; height:26px; line-height:26px; text-align:center; background:#44484b; color:#fff; margin-top:30px;}
+.ckb input{ margin-top:0px;}
+
+.contMain .right02{ padding-top:18px;}
+.contMain .right .rightList{width:298px; margin:0 auto; padding-top:25px;}
+.rightList .titHd2{width:298px; height:27px; margin:0 auto; border-bottom:1px solid #45484b;}
+.rightList .xzList{ padding:10px 0 0 10px;}
+.xzList li{ height:22px; line-height:22px; color:#424141; padding-bottom:5px;}
+.xzList li span{ float:left;}
+.xzList li samp{ float:left;}
+.xzList li a { float:left; color:#424141; text-decoration:underline;}
+.rightList .upa,.upa2{ display:block; width:86px; height:26px; line-height:26px; color:#fff; text-indent:25px; background:#44484b url(../images/up.gif) left top no-repeat; outline:none; margin:5px 0 0 10px;}
+.rightList .upa2{ text-indent:30px; background:#44484b url(../images/gdfaq.gif) left top no-repeat;}
+
+.pageContWrap{ width:948px; padding-bottom:50px;}
+.pageContWrap .agree_h3{ text-align:center; padding:30px 0;}
+.pageContWrap .agree_p,.service_p{ line-height:20px;}
+.agree_p .red{ color:#fe0000;}
+
+.about_us{ text-align:center; padding:200px 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

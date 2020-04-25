@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>客服</title>
+<meta name="Keywords" content="鱼丸游戏-休闲娱乐游戏研发及运营平台_手机游戏鱼丸游戏-休闲娱乐游戏研发及运营平台_手机游戏">
+<meta name="Description" content="鱼丸游戏-休闲娱乐游戏研发及运营平台_手机游戏鱼丸游戏-休闲娱乐游戏研发及运营平台_手机游戏">
+
+<script type="text/javascript" src="static/js/jquery.js"></script>
+
+<link rel="stylesheet" href="static/css/ser.css" type="text/css">
+<script type="text/javascript" src="static/js/min.js"></script>
+<script type="text/javascript" src="static/js/ajax.js"></script>
+<script type="text/javascript" src="static/js/base.js"></script>
+<script type="text/javascript" src="static/js/images.js"></script>
+<link rel="stylesheet" href="static/css/base.css" type="text/css">
+<script type="text/javascript" src="static/js/move1.js"></script>
+
+<style>
+</style>
+<script>
+	window.onscroll = function() {
+		var oDiv = document.getElementById("newss");
+		var scrollTop = document.documentElement.scrollTop
+				|| document.body.scrollTop;
+		/* oDiv.style.top=document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop+"px";
+		 */
+		startMove1(parseInt(document.documentElement.clientHeight
+				- oDiv.offsetHeight + scrollTop));
+	};
+	var timer = null;
+	function startMove1(iTarget) {
+		var oDiv = document.getElementById("newss");
+		clearInterval(timer);
+		timer = setInterval(function() {
+			var speed = (iTarget - oDiv.offsetTop) / 6;
+			speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+			if (oDiv.offsetTop == iTarget) {
+				clearInterval(timer);
+			} else {
+				oDiv.style.top = oDiv.offsetTop + speed + "px";
+			}
+		}, 30);
+
+	}
+</script>
+</head><body>
+	<div class="header">
+		<div class="wrap">
+			<p style="color:red;font-size:18px;position:relative;top:30%;left:15%">&nbsp;&nbsp;适龄提示：18岁以上玩家</p>
+			<div class="logo">
+<a style="font-size:20px;position:relative;top:30%;left:60%">&nbsp;&nbsp;深圳市灵犀互娱科技有限公司</a>
+			</div>
+			
+		  
+			<div class="login" style="background:#2ca8e8;display: none;">
+				<span class=""><a href="/user.html" style="color:#f8f8f8">登录</a> </span> <span class=""><a href="register.html" style="color:#f8f8f8">注册</a> </span>
+			</div>
+            <div class="lyle"><p> </p></div>
+			<div class="nav">
+				<ul>
+					<li><a href="/index.html" class="home"><span></span><em>首
+								页</em> </a>
+					</li>
+					<li><a href="/about.html" class="news"><span></span><em>关于我们</em>
+					</a>
+					</li>
+					<li class="on"><a href="/service.html" class="service"><span></span><em>客 服</em> </a>
+					</li>
+					<li><a href="/article.html" class="news"><span></span><em>用户协议</em>
+					</a>
+					</li>
+					<li><a href="/newcustody.html" class="news"><span></span><em>家长监护工程</em>
+					</a></li>
+					<li><a href="/pay.html" class="news"><span></span><em>充值中心</em>
+					</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="warp">
+		<div class="main">
+			<div style="width:100px;float:left;">&nbsp;&nbsp;</div>
+			<div class="user" style="display:none;">
+				<div class="logo" onclick="javascript:window.location.href=&#39;http://longtugame.com&#39;;">
+					<a href="javascript:void(0);"> <!--  <img src="../images/logo.png" /> -->
+					</a>
+				</div>
+				<div class="form">
+					<div class="landing">
+						<h1>用户登录</h1>
+						<p>
+							还没有账号？ <a href="/service.html" target="_blank">立即注册！</a>
+						</p>
+					</div>
+					<p class="import">
+						<input type="text" name="user_name" id="user_name" placeholder="请输入账号">
+					</p>
+					<p class="import">
+						<input type="password" name="pwd" id="pwd" placeholder="请输入密码" onkeydown="chkenter(event);">
+					</p>
+					<p class="forget">
+						<span class="left"><input class="checkbox" type="checkbox" name="chkRememberMe">下次自动登录</span> <span class="right"><a href="http://longtugame.com/user/findpwd" target="_blank">忘记密码？</a>
+						</span> <span class="clear"></span>
+					</p>
+					<p class="hint" id="tipErr" style="display: none;"></p>
+					<p class="but">
+						<input name="button" type="button" value="登 录" onclick="dologin();">
+					</p>
+					<dl class="codes">
+						<dt>
+							<img src="static/images/code.jpg">
+						</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				function chkenter(event) {
+					if (event.keyCode == 13)
+						dologin();
+				}
+				function dologin() {
+					var tipErr = document.getElementById('tipErr');
+					var username = document.getElementById('user_name').value;
+					var password = document.getElementById('pwd').value;
+					tipErr.style.display = 'none';
+					//        passErr.style.display = 'none';
+					// if(/^[\s　]?$/.test(username)) {
+					if (!username) {
+						tipErr.style.display = 'block';
+						tipErr.innerHTML = '用户名不能为空';
+						return false;
+					}
+
+					if (!password) {
+						tipErr.style.display = 'block';
+						tipErr.innerHTML = '密码不能为空';
+						return false;
+					}
+
+					var vAjax = new Ajax();
+					var url = '/api/login';
+					var querysting = 'username=' + encodeURIComponent(username)
+							+ '&password=' + encodeURIComponent(password);
+					vAjax.callback = function(result) {
+						result = eval('(' + result + ')');
+						;
+						if (result.code == '0') {
+							//                window.location.reload(true);
+							window.location.href = '/question/rechindex?lg=1';
+						} else {
+							tipErr.innerHTML = result.message;
+							tipErr.style.display = 'inline-block';
+						}
+					};
+					vAjax.runAJAX(url, querysting, 'post', false);
+					return false;
+				}
+
+				function searc_arc() {
+					var info = $('#searc_arc').val();
+					window.location.href = '/question/recharc?search=' + info;
+				}
+			</script>
+
+			<script type="text/javascript" src="static/js/js.js"></script>
+
+			<div class="matter">
+				<div class="title">
+					<div class="left">
+						<p>
+							有问题请加客服MMQQ： <span>463301984</span>
+						</p>
+					</div>
+					<div class="right">
+
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div>
+					<img alt="" src="static/images/kefu.png">
+				</div>
+				<div class="column fixed">
+					<h3>常见问题</h3>
+
+					<div class="ment">
+
+						<ul class="red" style="cursor:pointer;">
+
+
+
+							<li style="width:500px;height:auto;"><span style="color:red;font-size:14px;">今天我是第一次充值，为什么没有翻倍？</span><br>亲，只有基础值是翻倍的呢，赠送金豆的是不参与翻倍的哦。</li>
+
+							<li style="width:500px;height:auto;"><span style="color:red;font-size:15px;">我跟我朋友都在玩，出的结果居然不一样？</span><br>我们每个房间有40个人的，你们俩不在一个房间的原因哦。你们可以试试去高等级的房间，更大几率会在一个房间。高等级的房间人数一般比较少。</li>
+
+							<li style="width:500px;height:auto;"><span style="color:red;font-size:15px;width:500px;">为什么提示我注册上限了呢，我明明刚刚下载。</span><br>可能是游戏获取不到您手机的信息呢，您去QQ里的腾讯应用宝下载我们游戏，名称是奔驰宝马。
+								或者换一部手机去注册呢，别的手机注册的账号依然可以在您的手机上登录。</li>
+
+
+							
+
+							<li style="width:500px;height:auto;"><span style="color:red;font-size:15px;">为什么你们没有电脑版的？</span><br>
+								您可以在电脑上下载安卓模拟器，搜索奔驰宝马进行游戏。</li>
+
+							<li style="width:500px;height:auto;"><span style="color:red;font-size:15px;">为什么你们苹果的只能 App ID充值？</span><br>
+								暂时因为苹果供应商那边的原因，只能通过他们的充值哦。您要是有安卓的手机话，可以通过安卓手机充值，苹果进行游戏呢。我们游戏账号都是通用的！
+
+							</li>
+
+							<li style="width:500px;height:auto;"><span style="color:red;font-size:15px;">上庄为什么掉线了就没金豆了？</span><br>
+								亲，即使您那边游戏卡掉，系统还是照常跑分的，如果你下注了的话，那一局你输了就扣掉你的豆子了；上庄的话，这局过后再进行一局，正常下庄。
+								赢了的话，系统是会自动将你赢的豆子返还到您的账号上的哦。所以为了保证更好的游戏质量，建议您更换到WIFI状态下体验游戏。</li>
+
+							<li style="width:500px;height:auto;"><span style="color:red;font-size:15px;">短信为什么会提示403
+									支付失败等信息，或者买了金币没有到账。</span><br> 亲
+								你那边短信充值通道存在信息不畅通问题，所以容易引起短信充值扣费却没有豆子的问题，建议你使用支付宝或其他方式充值，这样也更方便划算省心些！
+							</li>
+
+							<li style="width:500px;height:auto;"><span style="color:red;font-size:15px;">不记得密码，查找账号怎么查？</span><br>
+								注册账号的手机打电话（有卡没卡没关系），号码是 *#06#。拨打后手机会显示一串数字，把那串数字和您的手机品牌发给客服就可以了。
+								要是您注册的手机已经丢失，您可以发送您的账号昵称或者ID给客服，还有您的注册账号的手机型号哦！客服qq：463301984</li>
+
+
+
+
+
+
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+
+	</div>
+	<div class="footer">
+		<div class="wrap">
+			<div class="about">
+				<p class="p1">
+					
+				</p>
+			<p>抵制不良游戏，拒绝盗版游戏。 注意自我保护，谨防受骗上当。</p>
+                <p>适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。</p>
+                <p>客服QQ:463301984</p>
+                <p>联系地址:深圳市宝安区福永街道兴围社区兴华路北102号创造力科技大厦A栋513</p>
+                <p>深圳市灵犀互娱科技有限公司   版权所有  <a href="http://www.miitbeian.gov.cn/" target="_blank" style="color:#b1b1b1;"></a></p>
+                <p><a href="http://www.yuyou2018.com/images/B2-20170060.jpg" target="_blank" style="color:#b1b1b1;">增值电信业务经营许可证： </a></p>
+                <p><img src="static/images/beian.png" width="20">&nbsp;沪公网安备 <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="color:#b1b1b1;" target="_blank"></a>号</p>
+                <p><img src="static/images/www.png" width="20">&nbsp;互联网文化经营单位：沪网文：<a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/486D292193493B18E0530140A8C04AC3" style="color:#b1b1b1;" target="_blank"></a></p>
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			ltModule['index'].main();
+		});
+	</script>
+
+<script>
+	$(document).ready(function() {
+		var div1 = document.getElementById("newss");
+		$("#moree").toggle(function() {
+			startMove(div1, {
+				height : 30
+			}, function() {
+				startMove(div1, {
+					width : 20
+				});
+			});
+		},
+
+		function() {
+			startMove(div1, {
+				width : 240
+			}, function() {
+				startMove(div1, {
+					height : 450
+				}, function() {
+					$("#newss").show();
+				});
+			});
+		});
+
+	});
+</script>
+
+<audio controls="controls" style="display: none;"></audio></body><style type="text/css">#yddContainer{display:block;font-family:Microsoft YaHei;position:relative;width:100%;height:100%;top:-4px;left:-4px;font-size:12px;border:1px solid}#yddTop{display:block;height:22px}#yddTopBorderlr{display:block;position:static;height:17px;padding:2px 28px;line-height:17px;font-size:12px;color:#5079bb;font-weight:bold;border-style:none solid;border-width:1px}#yddTopBorderlr .ydd-sp{position:absolute;top:2px;height:0;overflow:hidden}.ydd-icon{left:5px;width:17px;padding:0px 0px 0px 0px;padding-top:17px;background-position:-16px -44px}.ydd-close{right:5px;width:16px;padding-top:16px;background-position:left -44px}#yddKeyTitle{float:left;text-decoration:none}#yddMiddle{display:block;margin-bottom:10px}.ydd-tabs{display:block;margin:5px 0;padding:0 5px;height:18px;border-bottom:1px solid}.ydd-tab{display:block;float:left;height:18px;margin:0 5px -1px 0;padding:0 4px;line-height:18px;border:1px solid;border-bottom:none}.ydd-trans-container{display:block;line-height:160%}.ydd-trans-container a{text-decoration:none;}#yddBottom{position:absolute;bottom:0;left:0;width:100%;height:22px;line-height:22px;overflow:hidden;background-position:left -22px}.ydd-padding010{padding:0 10px}#yddWrapper{color:#252525;z-index:10001;background:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ab20.png);}#yddContainer{background:#fff;border-color:#4b7598}#yddTopBorderlr{border-color:#f0f8fc}#yddWrapper .ydd-sp{background-image:url(chrome-extension://eopjamdnofihpioajgfdikhhbobonhbb/ydd-sprite.png)}#yddWrapper a,#yddWrapper a:hover,#yddWrapper a:visited{color:#50799b}#yddWrapper .ydd-tabs{color:#959595}.ydd-tabs,.ydd-tab{background:#fff;border-color:#d5e7f3}#yddBottom{color:#363636}#yddWrapper{min-width:250px;max-width:400px;}</style></html>
